@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Graphics Pipeline Demo</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="hud">
+    <h1>Pipeline Demo</h1>
+    <p class="subtitle">Application -> Geometry -> Rasterization</p>
+    <div class="stats">
+      <span id="score">Score: 0</span>
+      <span id="lives">Lives: 3</span>
+      <span id="stage-label">Stage:</span>
+    </div>
+  </header>
+
+  <main>
+    <canvas id="game" width="800" height="500" aria-label="Game canvas"></canvas>
+    <aside class="legend">
+      <h2>Controls</h2>
+      <ul>
+        <li><kbd>←</kbd> <kbd>→</kbd> <kbd>↑</kbd> <kbd>↓</kbd>move ship</li>
+        <li><kbd>R</kbd>restart after game over</li>
+      </ul>
+      <h2>Goal</h2>
+      <p>Collect <strong>gems</strong> (+10).</p>
+      <p>Avoid <strong>asteroids</strong> (-1 life).</p>
+      <h2>Pipeline stages</h2>
+      <ol>
+        <li><strong>Application</strong>input, physics, collisions, score</li>
+        <li><strong>Geometry</strong>transforms vertices to screen space</li>
+        <li><strong>Rasterization</strong>draw pixels via Canvas 2D</li>
+      </ol>
+    </aside>
+  </main>
+<script src="app.js"></script>
+</body>
+</html>
